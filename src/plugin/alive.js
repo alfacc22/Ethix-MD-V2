@@ -26,13 +26,13 @@ const alive = async (m, Matrix) => {
     image.print(font, x, y, timeString, width, Jimp.HORIZONTAL_ALIGN_CENTER | Jimp.VERTICAL_ALIGN_MIDDLE);
     const buffer = await image.getBufferAsync(Jimp.MIME_PNG);
     
-    const uptimeMessage = `*🤖 ETHIX-MD Status Overview*
+    const uptimeMessage = `*👋 𓄂ʙʟᴀᴄᴋ ᴀʟꜰᴀ࿐ ᴍᴅ ²⁰²⁴᭄ ꜱᴛᴀᴛᴜꜱ ᴏᴠᴇʀᴠɪᴇᴡ ✔️*
 _________________________________________
 
-*📆 ${days} Day(s)*
-*🕰️ ${hours} Hour(s)*
-*⏳ ${minutes} Minute(s)*
-*⏲️ ${seconds} Second(s)*
+*🗒️ ${days} Day(s)*
+*🕛 ${hours} Hour(s)*
+*⌚ ${minutes} Minute(s)*
+*⌛️ ${seconds} Second(s)*
 _________________________________________
 `;
     
@@ -40,14 +40,14 @@ _________________________________________
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
-          display_text: "MENU",
+          display_text: "MENU 📃",
           id: `${prefix}menu`
         })
       },
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
-          display_text: "PING",
+          display_text: "PING 📟",
           id: `${prefix}ping`
         })
       }
@@ -65,7 +65,7 @@ _________________________________________
               text: uptimeMessage
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "© ᴘᴏᴡᴇʀᴅ ʙʏ ᴇᴛʜɪx-ᴍᴅ"
+              text: "ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𓄂ʙʟᴀᴄᴋ ᴀʟꜰᴀ࿐ ᴍᴅ"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...(await prepareWAMessageMedia({ image: buffer }, { upload: Matrix.waUploadToServer })),
