@@ -33,7 +33,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
     }
 
     try {
-      await m.React("🕘");
+      await m.React("📩");
 
       const fbData = await getFBInfo(text);
       console.log("fbData:", fbData);  // Log the data structure
@@ -48,16 +48,16 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
 
       const videoQualities = [];
       if (fbData.sd) {
-        videoQualities.push({ resolution: 'SD', url: fbData.sd });
+        videoQualities.push({ resolution: '➡️SD', url: fbData.sd });
       }
       if (fbData.hd) {
-        videoQualities.push({ resolution: 'HD', url: fbData.hd });
+        videoQualities.push({ resolution: '➡️HD', url: fbData.hd });
       }
 
       const buttons = videoQualities.map((video, index) => ({
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
-          display_text: `📥 Download ${video.resolution}`,
+          display_text: `📩 Download ${video.resolution}`,
           id: `fbmedia_${index}_${fbSearchIndex}`
         })
       }));
@@ -65,7 +65,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
       const sections = videoQualities.map((video) => ({
         title: 'Video Qualities',
         rows: [{
-          title: `📥 Download ${video.resolution}`,
+          title: `📩 Download ${video.resolution}`,
           description: `Resolution: ${video.resolution}`,
           id: `fbmedia_${fbSearchIndex}_${video.resolution}`
         }]
@@ -80,10 +80,10 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `*ETHIX-MD FACEBOOK POST DOWNLOADER*\n\n> *TITLE*: ${fbData.title}`
+                text: `*✨️FACEBOOK POST DOWNLOADER✨️*\n\n> *TITLE*: ${fbData.title}`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴇᴛʜɪx-ᴍᴅ"
+                text: "© ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𓄂ʙʟᴀᴄᴋ ᴀʟꜰᴀ࿐ ᴍᴅ ²⁰²⁴᭄"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image: { url: fbData.thumbnail } }, { upload: Matrix.waUploadToServer })),
