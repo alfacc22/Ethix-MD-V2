@@ -23,7 +23,7 @@ const query = m.body.slice(prefix.length + cmd.length).trim();
     const numberOfImages = 5; 
 
     try {
-      await sock.sendMessage(m.from, { text: '*Please wait*' });
+      await sock.sendMessage(m.from, { text: '*ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ᴍᴏᴛʜᴇʀ ꜰᴜᴄᴋᴇʀ....🍒*' });
 
       const images = [];
 
